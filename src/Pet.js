@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Pet = ({ name, animal, breed, images, location, id }) => {
-  let hero = "http://pets-images.dev-apis.com/pets/none.jpg";
+  let hero = "https://pets-images.dev-apis.com/pets/none.jpg";
   if (images.length) {
-    hero = images[0];
+    hero = images[0].replace("http", "https");
   }
   return (
     <Link to={`/details/${id}`} className="pet">
